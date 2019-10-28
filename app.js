@@ -21,7 +21,9 @@ db.authenticate()
 //set up server
 const app = express();
 
-
+// Configuring handlebars
+app.engine("handlebars", exphbs({ defaultLayout: "main"}))
+app.set("view engine", "handlebars")
 
 // Index route
 app.get('/', (req, res) => res.send("Index"))

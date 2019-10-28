@@ -14,16 +14,27 @@ Gig.findAll()
 .catch(err => console.log(err)))
 
 // Add a Gig
-router.get('/add'm (req, res)=> {
+router.get('/add', (req, res) => {
   const data = {
-    title: "Looking for dev",
+    title: "Looking for yet another dev",
     technologies: "react",
-    budget: "99",
-    description: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
-    contact_email: "ab@yahoo.com"
+    budget: "922",
+    description: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+    contact_email: "asasaddb@yahoo.com"
   }
 
   let {title, technologies, budget, description, contact_email} = data
-})
 
+
+// Insert into table
+Gig.create({
+  title,
+  technologies,
+  description,
+  budget,
+  contact_email
+})
+.then(gig => res.redirect('/gigs'))
+.catch(err => console.log(err))
+})
 module.exports = router
