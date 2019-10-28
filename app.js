@@ -28,7 +28,7 @@ app.set("view engine", "handlebars")
 app.use(express.static(path.join(__dirname, "public")))
 
 // Index route
-app.get('/', (req, res) => res.send("Index"))
+app.get('/', (req, res) => res.render("index", {layout: 'landing'}))
 
 // Gig routes
 app.use('/gigs', require('./routes/gigs'));

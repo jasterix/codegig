@@ -15,6 +15,7 @@ Gig.findAll()
 .catch(err => console.log(err)))
 
 // Display add gig form
+router.get('/add', (req, res) => res.render('add'))
 
 // Add a Gig
 router.get('/add', (req, res) => {
