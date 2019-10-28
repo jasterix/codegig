@@ -1,0 +1,29 @@
+const express = require('express');
+const router = express.Router();
+const db = require('../config/database');
+const Gig = require('../models/Gig');
+const Sequelize = require('sequelize');
+
+// Get list of gigs
+router.get('/', (req, res) => //here '/' ==> '/gigs'
+Gig.findAll()
+.then(gigs => {
+  console.log(gigs)
+  res.sendStatus(200);
+})
+.catch(err => console.log(err)))
+
+// Add a Gig
+router.get('/add'm (req, res)=> {
+  const data = {
+    title: "Looking for dev",
+    technologies: "react",
+    budget: "99",
+    description: "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+    contact_email: "ab@yahoo.com"
+  }
+
+  let {title, technologies, budget, description, contact_email} = data
+})
+
+module.exports = router
