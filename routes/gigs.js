@@ -8,10 +8,13 @@ const Sequelize = require('sequelize');
 router.get('/', (req, res) => //here '/' ==> '/gigs'
 Gig.findAll()
 .then(gigs => {
-  console.log(gigs)
-  res.sendStatus(200);
+  res.render("gigs", {
+    gigs
+  })
 })
 .catch(err => console.log(err)))
+
+// Display add gig form
 
 // Add a Gig
 router.get('/add', (req, res) => {
